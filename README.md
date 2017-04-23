@@ -4,12 +4,12 @@ Grails-ToDoList
 
 Table of Contents
 =================
-- [Getting started](#you-have-two-options)
+- [Getting started](#getting-started)
 - [Running your app](#run-your-app)
 - [A note about notes](#notes)
 
 
-You have two options
+Getting started - you have two options
 ====================
 - [Copy this repo](#copy-this-repo)
 - [Build your own grails app](#build-your-own-grails-app)
