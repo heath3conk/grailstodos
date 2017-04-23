@@ -9,8 +9,9 @@ Table of Contents
 - [A note about notes](#notes)
 
 
-Getting started - you have two options
-====================
+Getting started
+===============
+## You have two options: 
 - [Copy this repo](#copy-this-repo)
 - [Build your own grails app](#build-your-own-grails-app)
 
