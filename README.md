@@ -6,6 +6,7 @@ Table of Contents
 =================
 - [Getting started](#you-have-two-options)
 - [Running your app](#run-your-app)
+- [A note about notes](#notes)
 
 
 You have two options
@@ -64,4 +65,26 @@ Now that you have some version of an app, run it from the command line. Either `
 
 Open a new tab of the terminal for anything else you need to do in the command line while the app is running.
 
-Back to [top](#grails-todolist
+Back to [top](#grails-todolist)
+
+Notes
+=====
+
+It's a good idea to keep track of what you're doing and how you're doing it. The README.md file in your GitHub repo is an excellent place to make notes. You can be doing things in the command line and in your text editor and have the README open on the GitHub site to document the resources you're using and what's working (or not working).
+
+To update the README on the GitHub site, click on the file in your repo and then on the pencil icon in the upper-right corner, next to the garbage can. Preview your changes by clicking on the 'Preview Changes' tab at the top of the page. When you're finished editing, click the green 'Commit changes' button at the bottom of the page.
+
+You can also edit the README file on your text editor in the usual way.
+
+If you've made changes to the file on GitHub, you'll need to pull those changes down to your local git repository before you push any local changes up to the git remote. From inside your folder on your terminal:
+```
+    git add .
+    git commit -m "Some message about what you changed locally"
+    git pull
+    git push
+```
+There's a lot of stuff that git does that we won't go into here but their [documentation](https://git-scm.com/docs/gittutorial) is really good, if you want to do some more reading.
+
+The README.md is a 'markdown' document, not exactly your usual word-processing format. If you want to get fancy with it, [this website](https://docs.gitlab.com/ee/user/markdown.html) has a good sampling of how to make markdown do what you want.
+
+Back to [top](#grails-todolist)
