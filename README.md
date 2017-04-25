@@ -82,7 +82,7 @@ Troubleshooting
 
 Restart
 -------
-If you've been following instructions and something just doesn't seem to be happening in your app that you think *should* be happening. See if your app is running and, if it is, shut it down with `Ctrl-C` and start it up again with `grails run-app`.
+You've been following instructions and something just doesn't seem to be happening in your app that you think *should* be happening. If the app is currently running, shut it down with `Ctrl-C` and start it up again with `grails run-app`. That's right, turn it off and turn it back on; there's a reason it's a classic.
 
 
 Command line errors
