@@ -62,9 +62,9 @@ Create your own Grails app
     - The `generate-controller` command gives you a controller with all the methods spelled out so you can see and customize how you want the app to behave.
     - If you want to see the difference between them, you can use the `create-controller` command on a class, go look at the controller it makes and then run `generate-controller className -force`, which will overwrite the existing controller.
     - For the ToDo app I made, I used:
-        - `create-controller` for the HomeController and made no modifications to that file
-        - `create-controller` for the OwnerController and changed it to use the static scaffold
-        - `generate-controller` for the TaskController and CategoryController
+        - `create-controller` for the HomeController and only added line 6 to that file
+        - `create-controller` for the CategoryController and changed it to use the static scaffold
+        - `generate-controller` for the TaskController and OwnerController
 - I didn't follow the instructions exactly when I made this to-do list app but the tutorial gives a really good overview of some things you can do with Grails and how the parts fit together. 
 
 Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
