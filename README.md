@@ -5,19 +5,20 @@ Grails-ToDoList
 Table of Contents
 =================
 - [Get started](#get-started)
-    - [Copy this repo](#copy-repo)
-    - [Create your own grails app](#create-your-own)
+    - [Copy this repo](#copy-this-repo)
+    - [Create your own Grails app](#create-your-own-grails-app)
 - [Run your app](#run-your-app)
 - [Customize your app](#customize-your-app)
 - [Troubleshooting](#troubleshooting)
-    - [Build app](#build-app)
+    - [Command line errors](#command-line-errors)
+    - [Build dependencies](#build-dependencies)
 - [A note about notes](#notes)
 
 
 Get started
 ===========
 ## You have two options: 
-- [Copy this repo](#copy-repo)
+- [Copy this repo](#copy-this-repo)
 - [Create your own grails app](#create-your-own-grails-app)
 
 Copy this repo
@@ -53,7 +54,7 @@ Create your own Grails app
     git push -u origin master
     ```
 - Technically, you could skip all this git stuff and just start in on the app. But it's very reassuring to use git for version control. If you start playing around in the app and do something that breaks it, you can always get back to this point (or any point at which you have run `git commit`) and pick up from there instead of having to start from scratch.
-- Before you can run the app, you have to fetch its dependencies, or [build it](#build-app).
+- Before you can run the app, you have to fetch its dependencies, or [build it](#build-dependencies). **Do we have to do this?**
 - [Start up your app](#run-your-app)
 - To continue building your own app, follow [this tutorial](http://guides.grails.org/creating-your-first-grails-app/guide/index.html). You can pick it up at *Step 3: Running the App.* To keep it simple, skip section *4.6 Configure MySQL.* I didn't follow the instructions exactly when I made this to-do list app but the tutorial gives a really good overview of some things you can do with Grails and how the parts fit together. 
 
@@ -73,24 +74,33 @@ Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
 Customize your app
 ==================
 
+
+Back to [top](#grails-todolist)
+
 Troubleshooting
 ===============
 
-## If you get a `command not found` error when you try running `./grailsw`
-It's probably because you still need to fetch all the things your app needs to run, ie. you have to [build](#build-app) its dependencies.
+Command line errors
+-------------------
+
+### `Command not found` error when you run `./gradlew clean build`
+
+- Find out what version of gradle you have by running `gradle -v`
+- Get the gradle wrapper that matches your version: `gradle-wrapper --gradle-version [your version number]` 
+- You should be able to run `./gradlew clean build` now (and any other command that starts with `./gradlew`)
+
+### `Command not found` error when you run `./grailsw [anything]`
+Try running the same commands as just `grails`, eg. `grails run-app` or `grails create-domain-class [classname]`.
+
+Back to [top](#grails-todolist) or to [customizing your app](#customize-your-app)
 
 
-Build app
----------
+Build dependencies
+------------------
 
 Groovy uses a utility called Gradle to manage logistics. You tell Gradle what tools you need ("dependencies") to run your app and Gradle will go fetch them for you and make sure they're available when you need them. Don't worry! When you started up the Grails app, it came with a list of the dependencies built-in. You just have to fetch them.
 
-First, make sure Gradle is set up to do what you want:
-
--`gradle -v` to find out what version of gradle you have
--`gradle-wrapper --gradle-version [your version number]` 
-
-Next
+Run the build: `./gradlew clean build`. You should see a bunch of things happen, ending with "BUILD SUCCESSFUL." (If you get an error about not being able to get to a website, confirm that your internet connection is over MyNet or Allstate_Guest and try again.)
 
 Back to [top](#grails-todolist) or [creating your app](#create-your-own-grails-app) or on to [customizing your app](#customize-your-app)
 
