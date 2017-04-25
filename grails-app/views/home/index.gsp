@@ -8,7 +8,9 @@
 
 <div id="content" role="main">
     <section class="row colset-2-its">
-        <h1>Welcome to our Home Page!</h1>
+        <h1>Welcome to the Home Page!</h1>
+
+        <h4>There are ${taskTotal} tasks in the database.</h4>
     </section>
 </div>
 

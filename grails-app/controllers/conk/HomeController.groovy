@@ -2,5 +2,7 @@ package conk
 
 class HomeController {
 
-    def index() { }
+    def index() {
+      respond([taskTotal: Task.count()])
+    }
 }

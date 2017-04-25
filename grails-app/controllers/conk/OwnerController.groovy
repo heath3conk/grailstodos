@@ -4,91 +4,91 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class TaskController {
+class OwnerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Task.list(params), model:[taskCount: Task.count()]
+        respond Owner.list(params), model:[ownerCount: Owner.count()]
     }
 
-    def show(Task task) {
-        respond task
+    def show(Owner owner) {
+        respond owner
     }
 
     def create() {
-        respond new Task(params)
+        respond new Owner(params)
     }
 
     @Transactional
-    def save(Task task) {
-        if (task == null) {
+    def save(Owner owner) {
+        if (owner == null) {
             transactionStatus.setRollbackOnly()
             notFound()
             return
         }
 
-        if (task.hasErrors()) {
+        if (owner.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond task.errors, view:'create'
+            respond owner.errors, view:'create'
             return
         }
 
-        task.save flush:true
+        owner.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'task.label', default: 'Task'), task.id])
-                redirect task
+                flash.message = message(code: 'default.created.message', args: [message(code: 'owner.label', default: 'Owner'), owner.id])
+                redirect owner
             }
-            '*' { respond task, [status: CREATED] }
+            '*' { respond owner, [status: CREATED] }
         }
     }
 
-    def edit(Task task) {
-        respond task
+    def edit(Owner owner) {
+        respond owner
     }
 
     @Transactional
-    def update(Task task) {
-        if (task == null) {
+    def update(Owner owner) {
+        if (owner == null) {
             transactionStatus.setRollbackOnly()
             notFound()
             return
         }
 
-        if (task.hasErrors()) {
+        if (owner.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond task.errors, view:'edit'
+            respond owner.errors, view:'edit'
             return
         }
 
-        task.save flush:true
+        owner.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'task.label', default: 'Task'), task.id])
-                redirect task
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'owner.label', default: 'Owner'), owner.id])
+                redirect owner
             }
-            '*'{ respond task, [status: OK] }
+            '*'{ respond owner, [status: OK] }
         }
     }
 
     @Transactional
-    def delete(Task task) {
+    def delete(Owner owner) {
 
-        if (task == null) {
+        if (owner == null) {
             transactionStatus.setRollbackOnly()
             notFound()
             return
         }
 
-        task.delete flush:true
+        owner.delete flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'task.label', default: 'Task'), task.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'owner.label', default: 'Owner'), owner.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -98,7 +98,7 @@ class TaskController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'task.label', default: 'Task'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'owner.label', default: 'Owner'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }
