@@ -56,7 +56,16 @@ Create your own Grails app
     ```
 - Technically, you could skip all this git stuff and just start in on the app. But it's very reassuring to use git for version control. If you start playing around in the app and do something that breaks it, you can always get back to this point (or any point at which you have run `git commit`) and pick up from there instead of having to start from scratch.
 - [Start up your app](#run-your-app)
-- To continue building your own app, follow [this tutorial](http://guides.grails.org/creating-your-first-grails-app/guide/index.html). You can pick it up at *Step 3: Running the App.* To keep it simple, skip section *4.6 Configure MySQL.* I didn't follow the instructions exactly when I made this to-do list app but the tutorial gives a really good overview of some things you can do with Grails and how the parts fit together. 
+- To continue building your own app, follow [this tutorial](http://guides.grails.org/creating-your-first-grails-app/guide/index.html). You can pick it up at *Step 3: Running the App.* To keep it simple, skip section *4.6 Configure MySQL.* 
+- Note that there are two ways to make your controllers in *Section 5*: 
+    - The `create-controller` command gives you a bare-bones controller with only an index. You might replace that with `static scaffold = className` which would provide all the functionality you need without making you spell out all the methods.
+    - The `generate-controller` command gives you a controller with all the methods spelled out so you can see and customize how you want the app to behave.
+    - If you want to see the difference between them, you can use the `create-controller` command on a class, go look at the controller it makes and then run `generate-controller className -force`, which will overwrite the existing controller.
+    - For the ToDo app I made, I used:
+        - `create-controller` for the HomeController and made no modifications to that file
+        - `create-controller` for the OwnerController and changed it to use the static scaffold
+        - `generate-controller` for the TaskController and CategoryController
+- I didn't follow the instructions exactly when I made this to-do list app but the tutorial gives a really good overview of some things you can do with Grails and how the parts fit together. 
 
 Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
 
