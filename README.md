@@ -5,6 +5,8 @@ Grails-ToDoList
 Table of Contents
 =================
 - [Get started](#get-started)
+    - [Copy this repo](#copy-repo)
+    - [Create your own grails app](#create-your-own)
 - [Run your app](#run-your-app)
 - [Customize your app](#customize-your-app)
 - [Troubleshooting](#troubleshooting)
@@ -15,7 +17,7 @@ Table of Contents
 Get started
 ===========
 ## You have two options: 
-- [Copy this repo](#copy-this-repo)
+- [Copy this repo](#copy-repo)
 - [Create your own grails app](#create-your-own-grails-app)
 
 Copy this repo
@@ -75,7 +77,7 @@ Troubleshooting
 ===============
 
 ## If you get a `command not found` error when you try running `./grailsw`
-It's probably because you need to fetch all the things your app needs to run, ie. you have to [build](#build-app) its list of dependencies.
+It's probably because you still need to fetch all the things your app needs to run, ie. you have to [build](#build-app) its dependencies.
 
 
 Build app
@@ -90,7 +92,7 @@ First, make sure Gradle is set up to do what you want:
 
 Next
 
-Back to [top](#grails-todolist) or [creating your app](create-your-own-grails-app) or on to [customizing your app](#customize-your-app)
+Back to [top](#grails-todolist) or [creating your app](#create-your-own-grails-app) or on to [customizing your app](#customize-your-app)
 
 Notes
 =====
