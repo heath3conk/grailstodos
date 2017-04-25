@@ -54,7 +54,6 @@ Create your own Grails app
     git push -u origin master
     ```
 - Technically, you could skip all this git stuff and just start in on the app. But it's very reassuring to use git for version control. If you start playing around in the app and do something that breaks it, you can always get back to this point (or any point at which you have run `git commit`) and pick up from there instead of having to start from scratch.
-- Before you can run the app, you have to fetch its dependencies, or [build it](#build-dependencies). **Do we have to do this?**
 - [Start up your app](#run-your-app)
 - To continue building your own app, follow [this tutorial](http://guides.grails.org/creating-your-first-grails-app/guide/index.html). You can pick it up at *Step 3: Running the App.* To keep it simple, skip section *4.6 Configure MySQL.* I didn't follow the instructions exactly when I made this to-do list app but the tutorial gives a really good overview of some things you can do with Grails and how the parts fit together. 
 
