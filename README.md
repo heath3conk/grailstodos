@@ -10,6 +10,7 @@ Table of Contents
 - [Run your app](#run-your-app)
 - [Customize your app](#customize-your-app)
 - [Troubleshooting](#troubleshooting)
+    - [Restart](#restart)
     - [Command line errors](#command-line-errors)
     - [Build dependencies](#build-dependencies)
 - [A note about notes](#notes)
@@ -79,16 +80,21 @@ Back to [top](#grails-todolist)
 Troubleshooting
 ===============
 
+Restart
+-------
+If you've been following instructions and something just doesn't seem to be happening in your app that you think *should* be happening. See if your app is running and, if it is, shut it down with `Ctrl-C` and start it up again with `grails run-app`.
+
+
 Command line errors
 -------------------
 
-### `Command not found` error when you run `./gradlew clean build`
+- ### `Command not found` error when you run `./gradlew clean build`
 
-- Find out what version of gradle you have by running `gradle -v`
-- Get the gradle wrapper that matches your version: `gradle-wrapper --gradle-version [your version number]` 
-- You should be able to run `./gradlew clean build` now (and any other command that starts with `./gradlew`)
+    - Find out what version of gradle you have by running `gradle -v`
+    - Get the gradle wrapper that matches your version: `gradle-wrapper --gradle-version [your version number]` 
+    - You should be able to run `./gradlew clean build` now (and any other command that starts with `./gradlew`)
 
-### `Command not found` error when you run `./grailsw [anything]`
+- ### `Command not found` error when you run `./grailsw [anything]`
 Try running the same commands as just `grails`, eg. `grails run-app` or `grails create-domain-class [classname]`.
 
 Back to [top](#grails-todolist) or to [customizing your app](#customize-your-app)
