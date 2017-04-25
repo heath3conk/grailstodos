@@ -4,16 +4,19 @@ Grails-ToDoList
 
 Table of Contents
 =================
-- [Getting started](#getting-started)
-- [Running your app](#run-your-app)
+- [Get started](#get-started)
+- [Run your app](#run-your-app)
+- [Customize your app](#customize-your-app)
+- [Troubleshooting](#troubleshooting)
+    - [Build app](#build-app)
 - [A note about notes](#notes)
 
 
-Getting started
-===============
+Get started
+===========
 ## You have two options: 
 - [Copy this repo](#copy-this-repo)
-- [Build your own grails app](#build-your-own-grails-app)
+- [Create your own grails app](#create-your-own-grails-app)
 
 Copy this repo
 --------------
@@ -23,12 +26,10 @@ Copy this repo
 - Type `git clone ` and then paste the URL you just copied from GitHub.
 - Type `cd grails-to-dos` to get into the folder and then start playing.
 
-Back to [top](#grails-todolist)
+Back to [top](#grails-todolist) or on to [run the app](#run-your-app) or [troubleshooting](#troubleshooting)
 
-On to [run the app](#run-your-app)
-
-Build your own Grails app 
-----------------------------
+Create your own Grails app 
+--------------------------
 - Open the terminal and navigate to the folder where you want to put your new app
 - Think of a name for your new Grails app...then type this in the terminal, substituting your app's name (don't use dashes or spaces in the name of your app):
     ```
@@ -50,12 +51,11 @@ Build your own Grails app
     git push -u origin master
     ```
 - Technically, you could skip all this git stuff and just start in on the app. But it's very reassuring to use git for version control. If you start playing around in the app and do something that breaks it, you can always get back to this point (or any point at which you have run `git commit`) and pick up from there instead of having to start from scratch.
+- Before you can run the app, you have to fetch its dependencies, or [build it](#build-app).
 - [Start up your app](#run-your-app)
 - To continue building your own app, follow [this tutorial](http://guides.grails.org/creating-your-first-grails-app/guide/index.html). You can pick it up at *Step 3: Running the App.* To keep it simple, skip section *4.6 Configure MySQL.* I didn't follow the instructions exactly when I made this to-do list app but the tutorial gives a really good overview of some things you can do with Grails and how the parts fit together. 
 
-Back to [top](#grails-todolist)
-
-On to [run the app](#run-your-app)
+Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
 
 Run your app
 ============
@@ -66,7 +66,31 @@ Now that you have some version of an app, run it from the command line. Either `
 
 Open a new tab of the terminal for anything else you need to do in the command line while the app is running.
 
-Back to [top](#grails-todolist)
+Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
+
+Customize your app
+==================
+
+Troubleshooting
+===============
+
+## If you get a `command not found` error when you try running `./grailsw`
+It's probably because you need to fetch all the things your app needs to run, ie. you have to [build](#build-app) its list of dependencies.
+
+
+Build app
+---------
+
+Groovy uses a utility called Gradle to manage logistics. You tell Gradle what tools you need ("dependencies") to run your app and Gradle will go fetch them for you and make sure they're available when you need them. Don't worry! When you started up the Grails app, it came with a list of the dependencies built-in. You just have to fetch them.
+
+First, make sure Gradle is set up to do what you want:
+
+-`gradle -v` to find out what version of gradle you have
+-`gradle-wrapper --gradle-version [your version number]` 
+
+Next
+
+Back to [top](#grails-todolist) or [creating your app](create-your-own-grails-app) or on to [customizing your app](#customize-your-app)
 
 Notes
 =====
