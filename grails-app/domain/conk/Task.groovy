@@ -4,8 +4,9 @@ class Task {
 
   String name
   Category category
+  Owner owner
 
-  static belongsTo = [ category: Category ]
+  static belongsTo = [ category: Category, owner: Owner ]
 
   static constraints = {
     name maxSize: 255

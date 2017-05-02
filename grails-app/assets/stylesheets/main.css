@@ -45,8 +45,26 @@ body {
     background-color: #abbf78;
 }
 
+a {
+  color: blue;
+}
+
+.link-header {
+  font-weight: bold;
+  font-size: 15px;
+}
+
 a:hover, a:active {
+    color: blue;
     outline: none; /* prevents outline in webkit on active links but retains it for tab focus */
+}
+
+ul {
+  list-style: none;
+}
+
+li.emo:before{
+  content: '\1f4a9\a0';
 }
 
 h1, h2, h3 {

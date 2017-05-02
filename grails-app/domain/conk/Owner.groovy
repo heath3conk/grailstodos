@@ -2,16 +2,15 @@ package conk
 
 class Owner {
 
-  String firstName
-  String lastName
+  String name
 
   static hasMany = [ tasks: Task ]
-  
+
 
   static constraints = {
   }
 
   String toString() {
-    firstName + ' ' + lastName
+    name
   }
 }
