@@ -9,6 +9,9 @@ Table of Contents
     - [Create your own Grails app](#create-your-own-grails-app)
 - [Run your app](#run-your-app)
 - [Customize your app](#customize-your-app)
+    - [Change the home page](#change-the-home-page)
+    - [Bootstrap your own tasks](#bootstrap-your-own-tasks)
+    - [Add bullet points](#add-bullet-points)
 - [Troubleshooting](#troubleshooting)
     - [Restart](#restart)
     - [Command line errors](#command-line-errors)
@@ -67,7 +70,7 @@ Create your own Grails app
         - `generate-controller` for the TaskController and OwnerController
 - I didn't follow the instructions exactly when I made this to-do list app but the tutorial gives a really good overview of some things you can do with Grails and how the parts fit together. 
 
-Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
+Back to [top](#grails-todolist) or to [customize your app](#customize-your-app) or [troubleshooting](#troubleshooting)
 
 Run your app
 ============
@@ -83,8 +86,39 @@ Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
 Customize your app
 ==================
 
+Change the home page
+--------------------
+
+Most of what you see on the home page is in the file `grails-app/views/home/index.gsp`. Change the header, add paragraphs, move things around. Be a little careful with anything that's inside of a tag that includes a `g:`, like the `<g:link>` tags. Those are working some Grails magic so somethings might not work the way you want if you change those. 
+
+### Don't be afraid of breaking things! Devs break things all the time. You can fix them. ###
+
+Bootstrap your own tasks
+------------------------
+
+This to-do list comes with one list owner, three categories and three tasks already created. Here's how you can personalize those pre-fab tasks:
+- Open the file `grails-app/init/grailstodos/BootStrap.groovy`
+- Change the information that's there to create the different entities. 
+    - The `category` and `owner` entities start with a variable name, eg. `def errands`, which you reference later when you make a task for that owner in that category.
+    - New tasks don't need variable names here because you don't need to refer to them anywhere else. 
+    - Don't forget to include `.save()` at the end of these statements.
+- If your app is already running, stop it by hitting `Ctrl-C` and restart it to see your custom tasks.
+
+
+Add bullet points
+-----------------
+
+There are lists on several pages. Give them emoji bullet points by adding a CSS class to the lists:
+- Open the file `grails-app/views/home/index.gsp`.
+- Find one of the lists on the page and change the tag from `<li>` to `<li class="emo">`. Hit `CMD-R` to refresh the page.
+- To change to a different emoji:
+    - Find one you like better on [this page](http://unicode.org/emoji/charts/full-emoji-list.html) and look for its code in the second column from the left. 
+    - Open the main CSS file: `grails-app/assets/stylesheets/main.css` and go to line 66 to change the `li.emo:before` section.
+    - Replace the code `1f4a9` with the code for your emoji of choice.
+    - Refresh the page by hitting `CMD-R`.
 
 Back to [top](#grails-todolist)
+
 
 Troubleshooting
 ===============
