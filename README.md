@@ -137,8 +137,11 @@ Command line errors
     - Get the gradle wrapper that matches your version: `gradle-wrapper --gradle-version [your version number]` 
     - You should be able to run `./gradlew clean build` now (and any other command that starts with `./gradlew`)
 
-- ### `Command not found` error when you run `./grailsw [anything]`
-Try running the same commands as just `grails`, eg. `grails run-app` or `grails create-domain-class [classname]`.
+- ### `Permission denied` or `Command not found` errors when you run `./grailsw [anything]`
+    
+    - Make sure you're in the `grailstodos` folder
+    - If you're still getting the error, type the command `chmod 777 ./grailsw`
+    - If you still get the error after that, you may need to download grails to your computer. Go to [the Grails website](http://docs.grails.org/latest/guide/gettingStarted.html) and follow those instructions. This won't enable you to run the `./grailsw` commands but it will let you run whatever you want as just `grails`, eg. `grails run-app`.
 
 Back to [top](#grails-todolist) or to [customizing your app](#customize-your-app)
 
