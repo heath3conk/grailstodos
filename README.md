@@ -75,7 +75,7 @@ Back to [top](#grails-todolist) or to [customize your app](#customize-your-app) 
 Run your app
 ============
 
-Now that you have some version of an app, run it from the command line. Either `grails run-app` or `./grailsw run-app` should work. The first time you run it, you may see a whole list of things getting downloaded when you start up, these are all the dependencies required to make the app work. Eventually, you should see a line in the terminal that reads: `Grails application running at http://localhost:8080 in environment: development` At that point, open your browser (ideally Chrome) and enter `localhost:8080` in the address bar to see your app.
+Now that you have some version of an app, run it from the command line by entering `./grailsw run-app`. The first time you run it, you may see a whole list of things getting downloaded when you start up, these are all the dependencies required to make the app work. Eventually, you should see a line in the terminal that reads: `Grails application running at http://localhost:8080 in environment: development` At that point, open your browser (ideally Chrome) and enter `localhost:8080` in the address bar to see your app.
 
 `Ctrl-C` will stop the app.
 
