@@ -42,7 +42,7 @@ Create your own Grails app
     ```
     curl -O start.grails.org/yourappname.zip -d profile=web
     ```
-- Type `ls` into the command line and you should see a new folder called `yourappname.zip`. Now you need to unzip it: `unzip yourappname.zip` If you get an error about `unzip`, you may need to install that tool yourself using `sudo apt-get install zip unzip`. (Be cautious about using `sudo` commands if you're not sure of their source!) As an alternative, you could use Finder to extract the zipped files.
+- Type `ls` into the command line and you should see a new folder called `yourappname.zip`. Now you need to unzip it: `unzip yourappname.zip` Or you can open it in finder by typing in the command line `open .` If you get an error about `unzip`, you may need to install that tool yourself using `sudo apt-get install zip unzip`. (Be cautious about using `sudo` commands if you're not sure of their source!) As an alternative, you could use Finder to extract the zipped files.
 - If you type `ls` again in the terminal, you should now see two objects with your app's name, one that has the `.zip` after it and the other doesn't. Type `cd yourappname` (without the .zip).
 - Initialize this folder as a git repository and commit the folders and files you just created:
     ```
@@ -85,6 +85,8 @@ Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
 
 Customize your app
 ==================
+
+Now you can take a look at the code running your app.  Let's take a look at the code in Atom.  You can do this right from the command line by typing `atom .`
 
 Change the home page
 --------------------
