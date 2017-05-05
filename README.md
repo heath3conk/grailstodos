@@ -32,17 +32,18 @@ Copy this repo
 - Open the terminal and navigate to the folder where you want to put the app.
 - Type `git clone ` and then paste the URL you just copied from GitHub.
 - Type `cd grails-to-dos` to get into the folder and then start playing.
+- #### Don't follow the 'Create your own Grails app' instructions at this point. Once you've cloned it, you have a working app and you can go on to [run the app](#run-your-app).
 
 Back to [top](#grails-todolist) or on to [run the app](#run-your-app) or [troubleshooting](#troubleshooting)
 
 Create your own Grails app 
 --------------------------
-- Open the terminal and navigate to the folder where you want to put your new app
+- Open the terminal and navigate to the folder where you want to put your new app. ***If you've already cloned this repo, go to a different folder to create your own Grails app. You don't want both the ready-made one and your from-scratch app in the same folder.***
 - Think of a name for your new Grails app...then type this in the terminal, substituting your app's name (don't use dashes or spaces in the name of your app):
     ```
     curl -O start.grails.org/yourappname.zip -d profile=web
     ```
-- Type `ls` into the command line and you should see a new folder called `yourappname.zip`. Now you need to unzip it: `unzip yourappname.zip` If you get an error about `unzip`, you may need to install that tool yourself using `sudo apt-get install zip unzip`. (Be cautious about using `sudo` commands if you're not sure of their source!) As an alternative, you could use Finder to extract the zipped files.
+- Type `ls` into the command line and you should see a new folder called `yourappname.zip`. Now you need to unzip it: `unzip yourappname.zip` Or you can open it in finder by typing in the command line `open .` If you get an error about `unzip`, you may need to install that tool yourself using `sudo apt-get install zip unzip`. (Be cautious about using `sudo` commands if you're not sure of their source!) As an alternative, you could use Finder to extract the zipped files.
 - If you type `ls` again in the terminal, you should now see two objects with your app's name, one that has the `.zip` after it and the other doesn't. Type `cd yourappname` (without the .zip).
 - Initialize this folder as a git repository and commit the folders and files you just created:
     ```
@@ -86,6 +87,8 @@ Back to [top](#grails-todolist) or to [troubleshooting](#troubleshooting)
 Customize your app
 ==================
 
+Now you can take a look at the code running your app.  Let's take a look at the code in Atom.  You can do this right from the command line by typing `atom .`
+
 Change the home page
 --------------------
 
@@ -116,6 +119,18 @@ There are lists on several pages. Give them emoji bullet points by adding a CSS 
     - Open the main CSS file: `grails-app/assets/stylesheets/main.css` and go to line 66 to change the `li.emo:before` section.
     - Replace the code `1f4a9` with the code for your emoji of choice.
     - Refresh the page by hitting `CMD-R`.
+   
+ - If you created your own Grails app from scratch, you'll have to take an extra step to make this bullet-point thing work for you. Open the main CSS file and add the below code before following the other steps in this section:
+
+    ```
+    ul {
+        list-style: none;
+    }
+    
+    li.emo:before {
+        content: '\1f4a9\a0';
+    }
+    ```
 
 Back to [top](#grails-todolist)
 
